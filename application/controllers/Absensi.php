@@ -12,7 +12,7 @@ class Absensi extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = "Absensi";
-		$data['absensi'] = $this->absensi_model->getMasuk();
+		$data['absensi'] = $this->absensi_model->allAbsensi();
 		$this->load->view('template/header', $data);
 		$this->load->view('absensi/index', $data);
 		$this->load->view('template/footer');

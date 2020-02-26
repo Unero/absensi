@@ -14,7 +14,6 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <h2>Absensi</h2>
-
 			<!-- Tambah -->
 			<div class="row mt-4">
 				<div class="col-md-6">
@@ -23,7 +22,7 @@
 			</div>
 
 			<!-- List -->
-			<table class="table mt-2 border">
+			<table class="table table-secondary mt-2 border">
 				<thead>
 					<tr>
 						<th scope="col" class="text-center">Matkul</th>
@@ -35,10 +34,11 @@
 				</thead>
 				<tbody>
                 <?php foreach ($absensi as $abs):?>
+					<?= var_dump($abs) ?>
 					<tr>
-						<td scope="row" class="text-center"><?= $abs['matkul'];?></td>
-						<td scope="row" class="text-center"><?= $abs['dosen'];?></td>
-						<td scope="row" class="text-center"><?= $abs['mahasiswa'];?></td>
+						<td scope="row" class="text-center"><?= $abs['nama'];?></td>
+						<td scope="row" class="text-center"><?= $abs['nama_dosen'];?></td>
+						<td scope="row" class="text-center"><?= $abs['nama_mhs'];?></td>
 						<td scope="row" class="text-center"><?= $abs['status'];?></td>
 						<td scope="row" class="text-center"><?= $abs['waktu_masuk'];?></td>
 					</tr>

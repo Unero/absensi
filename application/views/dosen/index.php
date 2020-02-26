@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="col-md-auto">
+        <div class="col-md-6">
             <h2>Daftar Dosen</h2>
 			<table class="table">
 				<thead>
@@ -13,7 +13,7 @@
                 <?php foreach ($dosen as $dsn):?>
 					<tr>
 						<td scope="row" class="text-center"><?= $dsn['nip'];?></td>
-						<td scope="row" class="text-center"><?= $dsn['nama'];?></td>
+						<td scope="row" class="text-center"><?= $dsn['nama_dosen'];?></td>
 					</tr>
 				<?php endforeach; ?>
 				</tbody>

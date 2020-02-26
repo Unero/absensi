@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="col-md-auto">
+        <div class="col-md-6">
             <h2>Daftar Mahasiswa</h2>
 			<table class="table">
 				<thead>
@@ -15,7 +15,7 @@
                 <?php foreach ($mahasiswa as $mhs):?>
 					<tr>
 						<td scope="row" class="text-center"><?= $mhs['nim'];?></td>
-						<td scope="row" class="text-center"><?= $mhs['nama'];?></td>
+						<td scope="row" class="text-center"><?= $mhs['nama_mhs'];?></td>
 						<td scope="row" class="text-center"><?= $mhs['kelas'];?></td>
 						<td scope="row" class="text-center"><?= $mhs['jurusan'];?></td>
 					</tr>
