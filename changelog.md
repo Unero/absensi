@@ -2,8 +2,13 @@
 description: Any change will be writen here
 ---
 
-# Changelog
+# Changelog Aplikasi
 
+## 0.5.0 - 2020-02-29
+
+### Update
+
+* 
 ## 0.4.0 - 2020-02-24
 
 ### Added
