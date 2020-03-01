@@ -1,25 +1,10 @@
-# Membuat View
+# Breakdown
 
-## Getting Super Powers
+## List pengerjaan aplikasi
 
-Becoming a super hero is a fairly straight forward process:
+Dalam aplikasi ini terdapat 4 buah obyek yang akan dibuat yakni Mahasiswa, Dosen, Mata Kuliah dan Absensi. Absensi sendiri mendapatkan data dari 3 obyek lainnya. Dengan gambaran relasi dalam database berikut:
 
-```
-$ give me super-powers
-```
+![Relasi dalam Database](.gitbook/assets/image.png)
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
-
+Jadi dalam aplkasi ini nanti akan dibahas 4 hal tersebut Dosen, Matkul, Mahasiswa, Absensi.
 
