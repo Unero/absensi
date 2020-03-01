@@ -1,29 +1,46 @@
 ---
-description: Bagaimana / langkah - langkah membuat aplikasi ini.
+description: Langkah awal dalam membuat project ini
 ---
 
-# How to
+# Setting Project
 
-## Getting Super Powers
+## Requirement
 
-Becoming a super hero is a fairly straight forward process:
+* [ ] Menginstall webserver \(Apache\) bisa XAMPP dan sebagainya
+* [ ] Code Igniter 3 [https://codeigniter.com/en/download](https://codeigniter.com/en/download)
+* [ ] Teks Editor
 
+## Meng-_config_ Project
+
+Dalam folder root / utama buat file .htaccess yang berisi
+
+```text
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
 ```
-$ give me super-powers
+
+Lalu arahkan Editor untuk membuka folder application &gt; config. Dalam config.php ganti dan cari beberapa baris code menjadi seperti berikut
+
+```text
+[...]
+$config['base_url'] = 'http://localhost/absensi/';
+$config['index_page'] = '';
+[...]
 ```
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
+Buka routes.php pada folder config dan ganti baris kode berikut
 
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
+```text
+$route['default_controller'] = 'Absensi';
 ```
-{% endcode %}
 
+Tetap pada folder config buka autoload.php dan ganti baris kode berikut
 
+```text
+$autoload['helper'] = array('url');
+```
+
+Selanjutnya akan dibahas pembuatan View
 
