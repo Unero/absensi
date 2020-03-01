@@ -3,12 +3,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class absensi_model extends CI_Model {
-	public function getMasuk(){
-        return $this->db->get('absensi')->result_array();
-	}
-
 	public function allAbsensi(){
-		$this->db->select('mk.nama, d.nama_dosen, m.nama_mhs, a.status, a.waktu_masuk');
+		$this->db->select('mk.nama, d.nama_dosen, m.nama_mhs, m.nim, a.status, a.waktu_masuk');
 		$this->db->from('absensi a');
 		$this->db->join('dosen d', 'd.nip = a.dosen');
 		$this->db->join('mahasiswa m', 'm.nim = a.mahasiswa');
@@ -19,27 +15,6 @@ class absensi_model extends CI_Model {
 		}
 	}
 
-	public function getDosen(){
-		$this->db->select('*');
-		$this->db->from('dosen');
-		$query = $this->db->get();
-		return $query->result_array();
-	}
-
-	public function getMatkul(){
-		$this->db->select('*');
-		$this->db->from('matkul');
-		$query = $this->db->get();
-		return $query->result_array();
-	}
-
-	public function getMahasiswa(){
-		$this->db->select('*');
-		$this->db->from('mahasiswa');
-		$query = $this->db->get();
-		return $query->result_array();
-	}
-
 	public function absensi(){
         $data = [
             "matkul" => $this->input->post('matkul',true),
@@ -48,6 +23,18 @@ class absensi_model extends CI_Model {
 			"status" => $this->input->post('status', true)
         ];
         $this->db->insert('absensi', $data);  
+	}
+
+	public function clear(){
+		$this->db->set('status', '-');
+		$this->db->where('matkul', 3001);
+		$this->db->update('absensi');	
+	}
+
+	public function absent($nim, $status){
+		$this->db->set('status', $status);
+		$this->db->where('mahasiswa', $nim);
+		$this->db->update('absensi');	
 	}
 }
 
