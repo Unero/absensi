@@ -1,3 +1,7 @@
+---
+description: Dokumentasi pembuatan aplikasi dengan GitBook
+---
+
 # Absensi
 
 ## KELOMPOK 5 TI 2B
