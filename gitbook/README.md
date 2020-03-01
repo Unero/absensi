@@ -48,9 +48,9 @@ Pada folder config buka database.php, cari dan ganti baris kode berikut sesuai p
 
 ```text
   'hostname' => 'localhost',
-	'username' => username kalian,
-	'password' => password kalian,
-	'database' => 'absensi',
+    'username' => username kalian,
+    'password' => password kalian,
+    'database' => 'absensi',
 ```
 
 ## Membuat Template
@@ -69,19 +69,19 @@ Isi dari header.php
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
-		<style>
-		.badge{
-			margin-left:3px;
-		}
-		</style>
+        <style>
+        .badge{
+            margin-left:3px;
+        }
+        </style>
     <title><?php echo $title; ?></title>
   </head>
   <body>
 
-		<!-- navbar -->
-		<div class="container-fluid">
+        <!-- navbar -->
+        <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-				<div class="container">
+                <div class="container">
         <a class="navbar-brand" href="#">📖</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -93,10 +93,10 @@ Isi dari header.php
             <a class="nav-item nav-link" href="<?php echo base_url();?>dosen">🤵Data Dosen</a>
             <a class="nav-item nav-link" href="<?php echo base_url();?>matkul">📚Data Mata-Kuliah</a>
             </div>
-        </div>	
-				</div>
-		</nav>
-		</div>
+        </div>    
+                </div>
+        </nav>
+        </div>
 ```
 
 Isi dari footer.php
