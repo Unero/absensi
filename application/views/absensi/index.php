@@ -17,7 +17,8 @@
 			<!-- CRUD -->
 			<div class="row mt-4">
 				<div class="col-md-6">
-					<a href="<?= base_url();?>absensi/delete" class="btn btn-danger">Clear</a>
+					<a href="<?= base_url();?>absensi/add" class="btn btn-info mr-2">Insert Data</a>
+					<a href="<?= base_url();?>absensi/delete" class="btn btn-danger">Clear Absen</a>
 				</div>
 			</div>
 

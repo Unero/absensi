@@ -37,14 +37,6 @@
 								<?php endforeach; ?>
 							</select>
 						</div>
-						<div class="form-group">
-							<label for="Status">Status</label> <br>
-							<select class="form-control" name="status" id="status">
-							<?php foreach($status as $stat):?>
-								<option value="<?= $stat ?>"><?= $stat ?></option>
-							<?php endforeach; ?>
-							</select>
-						</div>  
 						<button type="submit" name="submit" class="btn btn-primary float-right">Absen</button>
                     </form>
                 </div>

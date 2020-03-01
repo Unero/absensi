@@ -12,6 +12,8 @@ class absensi_model extends CI_Model {
 		$query = $this->db->get();
 		if ($query->num_rows() != 0) {
 			return $query->result_array();
+		} else {
+			return "Data tidak ada";
 		}
 	}
 
@@ -35,6 +37,35 @@ class absensi_model extends CI_Model {
 		$this->db->set('status', $status);
 		$this->db->where('mahasiswa', $nim);
 		$this->db->update('absensi');	
+	}
+
+	public function insert_absensi(){
+        $data = [
+            "matkul" => $this->input->post('matkul',true),
+            "dosen" => $this->input->post('dosen',true),
+			"mahasiswa" => $this->input->post('mhs', true)
+        ];
+        $this->db->insert('absensi', $data);  
+	}
+
+	// Selection Data
+	public function getDosen(){
+		$this->db->select('*');
+		$this->db->from('dosen');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	public function getMatkul(){
+		$this->db->select('*');
+		$this->db->from('matkul');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	public function getMahasiswa(){
+		$query = $this->db->query("SELECT m.nim, m.nama_mhs FROM mahasiswa AS m LEFT JOIN absensi a ON m.nim = a.mahasiswa WHERE a.mahasiswa IS NULL");
+		return $query->result_array();
 	}
 }
 

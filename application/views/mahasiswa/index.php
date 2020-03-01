@@ -2,7 +2,8 @@
     <div class="row mt-3">
         <div class="col-md-6">
             <h2>Daftar Mahasiswa</h2>
-			<table class="table">
+			<a href="<?= base_url() ?>mahasiswa/add" class="btn btn-success">Insert Mahasiswa</a>
+			<table class="table mt-2">
 				<thead>
 					<tr>
 						<th scope="col" class="text-center">NIM</th>

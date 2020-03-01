@@ -19,10 +19,23 @@ class Mahasiswa extends CI_Controller {
 	}
 
 	public function add(){
-		$data['title'] = "Form menambah mahasiswa";
-		$this->load->view('template/header', $data);
-		$this->load->view('mahasiswa/tambah', $data);
-		$this->load->view('template/footer');
+		$data['title'] = "Form menambah Data Mahasiswa";
+		
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('kelas', 'kelas', 'required');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->load->view('template/header', $data);
+            $this->load->view('mahasiswa/tambah', $data);
+            $this->load->view('template/footer');    
+        }
+        else
+        {
+            $this->mahasiswa_model->add();
+			$this->session->set_flashdata('flash-data', 'ditambahkan');
+			redirect('mahasiswa','refresh');
+        }
 	}
 }
 

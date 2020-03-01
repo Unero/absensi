@@ -9,10 +9,8 @@ class mahasiswa_model extends CI_Model {
 	
 	public function add(){
 	$data = [
-            "nim" => $this->input->post('nim',true),
-            "nama" => $this->input->post('nama',true),
-            "kelas" => $this->input->post('kelas', true),
-            "jurusan" => $this->input->post('jurusan', true)
+            "nama_mhs" => $this->input->post('nama',true),
+            "kelas" => $this->input->post('kelas', true)
         ];
         $this->db->insert('mahasiswa', $data);
 	}
