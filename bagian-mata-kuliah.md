@@ -4,7 +4,7 @@ Sama seperti Dosen, mata kuliah hanya bisa menampilkan isi mata kuliah saja.
 
 ## Controller
 
-s
+Isi fungsi index untuk menampilkan daftar 
 
 ```php
 <?php
@@ -30,7 +30,7 @@ class Matkul extends CI_Controller {
 
 ## View
 
-s
+isi index.php
 
 ```php
 <div class="container">
@@ -66,7 +66,7 @@ s
 
 ## Model
 
-s
+fungsi model untuk mendapatkan data dari database
 
 ```php
 <?php
