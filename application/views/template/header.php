@@ -26,10 +26,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="<?php echo base_url();?>">⌚Absensi <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="<?php echo base_url();?>mahasiswa">👨‍🎓Data Mahasiswa</a>
-            <a class="nav-item nav-link" href="<?php echo base_url();?>dosen">🤵Data Dosen</a>
-            <a class="nav-item nav-link" href="<?php echo base_url();?>matkul">📚Data Mata-Kuliah</a>
+            	<a class="nav-item nav-link active" href="<?php echo base_url();?>absensi">⌚Absensi <span class="sr-only">(current)</span></a>
+            	<a class="nav-item nav-link" href="<?php echo base_url();?>mahasiswa">👨‍🎓Data Mahasiswa</a>
+            	<a class="nav-item nav-link" href="<?php echo base_url();?>dosen">🤵Data Dosen</a>
+							<a class="nav-item nav-link" href="<?php echo base_url();?>matkul">📚Data Mata-Kuliah</a>
+							<a class="nav-item nav-link" href="<?php echo base_url();?>login/logout">Logout</a>
             </div>
         </div>	
 				</div>

@@ -4,7 +4,10 @@ class Absensi extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();
-        $this->load->model('absensi_model');
+		$this->load->model('absensi_model');
+		if ($this->session->userdata('level') != "1") {
+			redirect('login','refresh');
+		}
     }
 
 	public function index()
