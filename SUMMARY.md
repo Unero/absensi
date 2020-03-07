@@ -9,6 +9,9 @@
   * [Bagian: Dosen](gitbook/bagian-dosen.md)
   * [Bagian: Absensi](gitbook/bagian-absensi.md)
   * [Hasil](gitbook/hasil.md)
+* [Tugas: Login, Register, Status](tugas-login-register-status/README.md)
+  * [Login](tugas-login-register-status/login.md)
+  * [Register](tugas-login-register-status/register.md)
 * [Changelog Aplikasi](changelog.md)
 * [Contributing to CodeIgniter](contributing.md)
 
