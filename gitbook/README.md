@@ -42,6 +42,12 @@ Tetap pada folder config buka autoload.php dan ganti baris kode berikut
 $autoload['helper'] = array('url');
 ```
 
+Menambahkan libraries
+
+```php
+$autoload['libraries'] = array('database', 'form_validation', 'session');
+```
+
 ## Setting database
 
 Pada folder config buka database.php, cari dan ganti baris kode berikut sesuai pengaturan webserver kalian. Sebelumnya buat database bernama absensi di mysql.

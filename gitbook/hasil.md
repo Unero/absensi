@@ -2,13 +2,13 @@
 
 ## Absensi
 
-![halaman index absensi](../.gitbook/assets/image%20%286%29.png)
+![halaman index absensi](../.gitbook/assets/image%20%287%29.png)
 
-![halaman penambahan data absensi](../.gitbook/assets/image%20%285%29.png)
+![halaman penambahan data absensi](../.gitbook/assets/image%20%286%29.png)
 
 ## Mahasiswa
 
-![halaman index mahasiswa](../.gitbook/assets/image%20%288%29.png)
+![halaman index mahasiswa](../.gitbook/assets/image%20%289%29.png)
 
 ![halaman penambahan data mahasiwa](../.gitbook/assets/image%20%282%29.png)
 
