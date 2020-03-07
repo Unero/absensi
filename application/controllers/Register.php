@@ -20,7 +20,7 @@ class Register extends CI_Controller {
 			$data['password'] = htmlspecialchars($this->input->post('password'));
 			$data['alamat'] = htmlspecialchars($this->input->post('alamat'));
 
-			if ($data['username'] == $this->register_model->getUsername($data['username'])) {
+			if ($this->register_model->getUsername($data['username'])) {
 				$data['pesan'] = "Username sudah digunakan";
 				$data['title'] = "Register";
 				$this->load->view('template/header_non_navbar', $data);

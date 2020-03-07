@@ -1,10 +1,10 @@
 <?=
 	form_open('register/process');
 ?>
-<div class="container">
+<div class="container mt-5">
 	<div class="card">
 		<div class="card-header">
-			Registrasi User
+			<h3>Registrasi User</h3>
 		</div>
 		<div class="card-body">
 			<form action="" method="post">
@@ -20,12 +20,18 @@
 				  <label for="alamat">Alamat</label>
 				  <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
 				</div>
-				<button type="submit" class="btn btn-primary">Register</button>
+				<button type="submit" class="btn btn-primary mr-2">Register</button>
 			</form>
-			<a href="<?= base_url();?>login">Sudah punya akun ?</a>
+			<a href="<?= base_url();?>login" class="btn btn-secondary">Sudah punya akun ?</a>
 		</div>
-		<div class="card-footer text-muted">
-			Footer
-		</div>
+		<?php
+		if (isset($pesan)) { ?>
+			<div class="card-footer text-muted">
+				<div class="alert alert-info" role="alert">
+					<p><?= $pesan;?></p>
+				</div>
+			</div>
+			<?php
+		} ?>
 	</div>
 </div>
