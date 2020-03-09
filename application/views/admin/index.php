@@ -4,6 +4,7 @@
 			<tr>
 				<th scope="col" class="text-center">Username</th>
 				<th scope="col" class="text-center">Password</th>
+				<th scope="col" class="text-center">Alamat</th>
 				<th scope="col" class="text-center">Level</th>
 				<th scope="col" class="text-center">Status</th>
 				<th scope="col" class="text-center">Action</th>
@@ -14,6 +15,7 @@
 				<tr>
 					<td scope="row" class="text-center"><?= $user['username'];?></td>
 					<td scope="row" class="text-center"><?= $user['password'];?></td>
+					<td scope="row" class="text-center"><?= $user['alamat'];?></td>
 					<td scope="row" class="text-center"><?= $user['level'];?></td>
 					<td scope="row" class="text-center"><?= $user['status'];?></td>
 					<td scope="row" class="text-center">

@@ -6,7 +6,7 @@ class Register extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Halaman Login";
+		$data['title'] = "Halaman Register";
 		$this->load->view('template/header_non_navbar', $data);
 		$this->load->view('user_activities/register');
 		$this->load->view('template/footer');
@@ -19,8 +19,8 @@ class Register extends CI_Controller {
 			$data['username'] = htmlspecialchars($this->input->post('username'));
 			$data['password'] = htmlspecialchars($this->input->post('password'));
 			$data['alamat'] = htmlspecialchars($this->input->post('alamat'));
-
-			if ($this->register_model->getUsername($data['username'])) {
+			
+			if ($this->register_model->getUsername($data['username']) >= 1) {
 				$data['pesan'] = "Username sudah digunakan";
 				$data['title'] = "Register";
 				$this->load->view('template/header_non_navbar', $data);

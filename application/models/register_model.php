@@ -13,7 +13,7 @@ class register_model extends CI_Model {
 		$this->db->select('username');
 		$this->db->from('user');
 		$this->db->where('username', $username);
-		return $this->db->get();
+		return $this->db->get()->num_rows();
 	}
 
 }

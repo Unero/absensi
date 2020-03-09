@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80018
 File Encoding         : 65001
 
-Date: 2020-03-07 19:22:27
+Date: 2020-03-09 07:55:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -87,4 +87,4 @@ CREATE TABLE `user` (
   `level` int(5) DEFAULT '1',
   `status` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'nonaktif',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
