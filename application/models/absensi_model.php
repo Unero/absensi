@@ -4,11 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class absensi_model extends CI_Model {
 	public function allAbsensi(){
-		$this->db->select('mk.nama, d.nama_dosen, m.nama_mhs, m.nim, a.status, a.waktu_masuk');
+		$this->db->select('mk.nama, d.nama_dosen, m.nama_mhs, m.nim, a.status, a.tanggal');
 		$this->db->from('absensi a');
 		$this->db->join('dosen d', 'd.nip = a.dosen');
 		$this->db->join('mahasiswa m', 'm.nim = a.mahasiswa');
 		$this->db->join('matkul mk', 'mk.id = a.matkul');
+		
 		$query = $this->db->get();
 		if ($query->num_rows() != 0) {
 			return $query->result_array();
@@ -17,14 +18,30 @@ class absensi_model extends CI_Model {
 		}
 	}
 
-	public function absensi(){
-        $data = [
-            "matkul" => $this->input->post('matkul',true),
-            "dosen" => $this->input->post('dosen',true),
-			"mahasiswa" => $this->input->post('mhs', true),
-			"status" => $this->input->post('status', true)
-        ];
-        $this->db->insert('absensi', $data);  
+	public function perTanggal($tanggal){
+		$this->db->select('mk.nama, d.nama_dosen, m.nama_mhs, m.nim, a.status, a.tanggal');
+		$this->db->from('absensi a');
+		$this->db->join('dosen d', 'd.nip = a.dosen');
+		$this->db->join('mahasiswa m', 'm.nim = a.mahasiswa');
+		$this->db->join('matkul mk', 'mk.id = a.matkul');
+		$this->db->where('a.tanggal', $tanggal);
+
+		$query = $this->db->get();
+		if ($query->num_rows() != 0) {
+			return $query->result_array();
+		} else {
+			return "Data tidak ada";
+		}
+	}
+
+	public function add($data){
+		$this->db->insert('absensi', $data);
+	}
+
+	public function ambil($kelas){
+		$this->db->select('nim');
+		$this->db->where('kelas', $kelas);
+        return $this->db->get('mahasiswa')->result_array();
 	}
 
 	public function clear(){
@@ -39,14 +56,6 @@ class absensi_model extends CI_Model {
 		$this->db->update('absensi');	
 	}
 
-	public function insert_absensi(){
-        $data = [
-            "matkul" => $this->input->post('matkul',true),
-            "dosen" => $this->input->post('dosen',true),
-			"mahasiswa" => $this->input->post('mhs', true)
-        ];
-        $this->db->insert('absensi', $data);  
-	}
 
 	// Selection Data
 	public function getDosen(){
@@ -64,8 +73,10 @@ class absensi_model extends CI_Model {
 	}
 
 	public function getMahasiswa(){
-		$query = $this->db->query("SELECT m.nim, m.nama_mhs FROM mahasiswa AS m LEFT JOIN absensi a ON m.nim = a.mahasiswa WHERE a.mahasiswa IS NULL");
-		return $query->result_array();
+		$this->db->distinct();
+		$this->db->select('kelas');
+		$this->db->from('mahasiswa');
+		return $this->db->get()->result_array();
 	}
 }
 

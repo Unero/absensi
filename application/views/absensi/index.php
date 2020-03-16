@@ -1,56 +1,42 @@
-<div class="container">
-	<?php if($this->session->flashdata('flash-data')):?>
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Mahasiswa <strong>berhasil</strong> <?= $this->session->flashdata('flash-data');?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>        
-        </div>
-    </div>
-    <?php endif; ?>
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <h2>Absensi</h2>
-			<!-- CRUD -->
-			<div class="row mt-4">
-				<div class="col-md-6">
-					<a href="<?= base_url();?>absensi/add" class="btn btn-info mr-2">Insert Data</a>
-					<a href="<?= base_url();?>absensi/delete" class="btn btn-danger">Clear Absen</a>
-				</div>
-			</div>
+<div class="container mt-5">
+	<h3>Absen</h3>
+	<div class="row">
+		<div class="col-md-12">
+			<?= var_dump($this->session->userdata('user'));?>
+			<?= form_open('absensi/absent'); ?>
+			<form action="" method="post">
+				<div class="form-group">
+				  <label for="matkul">Mata Kuliah</label>
+				  <select class="form-control" name="matkul" id="matkul">
+					<?php foreach($matkul as $mtkl):?>
+						<option value="<?= $mtkl['id'] ?>"><?= $mtkl['id']." - ".$mtkl['nama']; ?></option>
+					<?php endforeach; ?>
+				  </select>
 
-			<!-- List -->
-			<table class="table table-secondary mt-2 border">
-				<thead>
-					<tr>
-						<th scope="col" class="text-center">Matkul</th>
-						<th scope="col" class="text-center">Dosen</th>
-						<th scope="col" class="text-center">Mahasiswa</th>
-						<th scope="col" class="text-center">Ket</th>
-						<!-- <th scope="col" class="text-center">Tanggal</th> -->
-						<th scope="col" class="text-center">Aksi</th>
-					</tr>
-				</thead>
-				<tbody>
-                <?php foreach ($absensi as $abs):?>
-					<tr>
-						<td scope="row" class="text-center"><?= $abs['nama'];?></td>
-						<td scope="row" class="text-center"><?= $abs['nama_dosen'];?></td>
-						<td scope="row" class="text-center"><?= $abs['nama_mhs'];?></td>
-						<td scope="row" class="text-center"><?= $abs['status'];?></td>
-						<!-- <td scope="row" class="text-center"><?= $abs['waktu_masuk'];?></td> -->
-						<td scope="row" class="text-center">
-							<a href="<?= base_url();?>absensi/absen/<?= $abs['nim'];?>/Masuk" class="btn btn-success mr-2">🧾 Absen</a>
-							<a href="<?= base_url();?>absensi/absen/<?= $abs['nim'];?>/Ijin" class="btn btn-warning mr-2">🧾 Ijin</a>
-							<a href="<?= base_url();?>absensi/absen/<?= $abs['nim'];?>/Sakit" class="btn btn-info">🧾 Sakit</a>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
-        </div>
-    </div>
+				</div>
+				<div class="form-group">
+				  <label for="dosen">Dosen</label>
+				  <select class="form-control" name="dosen" id="dosen">
+					<?php foreach($dosen as $ds):?>
+						<option value="<?= $ds['nip']; ?>"><?= $ds['nip']." - ".$ds['nama_dosen']; ?></option>
+					<?php endforeach; ?>
+				  </select>
+				</div>
+				<div class="form-group">
+				  <label for="kelas">Kelas</label>
+				  <select class="form-control" name="kelas" id="kelas">
+				  <?php foreach($mahasiswa as $mhs):?>
+						<option value="<?= $mhs['kelas']; ?>"><?= $mhs['kelas']; ?></option>
+					<?php endforeach; ?>
+				  </select>
+				</div>
+				<div class="form-group">
+					<label for="tanggal">Tanggal</label>
+					<input type="date" name="tanggal" id="tanggal" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-primary">Absent</button>
+			</form>
+			<?= form_close(); ?>
+		</div>
+	</div>
 </div>

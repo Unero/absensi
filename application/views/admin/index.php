@@ -1,5 +1,5 @@
 <div class="container mt-5">
-	<table class="table table-bordered">
+	<table class="table table-bordered" id="listUser">
 		<thead class="thead-inverse">
 			<tr>
 				<th scope="col" class="text-center">Username</th>
@@ -27,3 +27,9 @@
 			</tbody>
 	</table>
 </div>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+		$('#listUser').DataTable();
+	});
+</script>

@@ -26,16 +26,50 @@ class Mahasiswa extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('template/header', $data);
-            $this->load->view('mahasiswa/tambah', $data);
-            $this->load->view('template/footer');    
+			if ($this->session->userdata('level') == "3") {
+				$this->load->view('template/header_admin', $data);
+            	$this->load->view('mahasiswa/tambah', $data);
+				$this->load->view('template/footer');
+			} else {
+				$this->load->view('template/header', $data);
+				$this->load->view('mahasiswa/tambah', $data);
+				$this->load->view('template/footer');    
+			}
         }
         else
         {
             $this->mahasiswa_model->add();
+			if ($this->session->userdata('level') == "3") {
+				redirect('admin/mahasiswa','refresh');
+			}
 			$this->session->set_flashdata('flash-data', 'ditambahkan');
 			redirect('mahasiswa','refresh');
         }
+	}
+
+	public function edit($nim){
+		$data['title'] = "Form menambah Data Mahasiswa";
+		$data['mahasiswa'] = $this->mahasiswa_model->get($nim);
+
+		$this->load->view('template/header_admin', $data);
+		$this->load->view('mahasiswa/edit', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function edit_proses(){
+		$nim = htmlspecialchars($this->input->post('nim'));
+		$nama = htmlspecialchars($this->input->post('nama'));
+		$kelas = htmlspecialchars($this->input->post('kelas'));
+		$update = $this->mahasiswa_model->update($nim, $nama, $kelas);
+
+		if ($update) {
+			redirect('admin/mahasiswa','refresh');
+		}
+	}
+
+	public function delete($nim){
+		$this->mahasiswa_model->delete($nim);
+		redirect('admin/mahasiswa','refresh');
 	}
 }
 

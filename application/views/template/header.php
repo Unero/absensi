@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
 		<style>
 		.badge{
 			margin-left:3px;
@@ -25,13 +25,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            	<a class="nav-item nav-link active" href="<?php echo base_url();?>absensi">⌚Absensi <span class="sr-only">(current)</span></a>
-            	<a class="nav-item nav-link" href="<?php echo base_url();?>mahasiswa">👨‍🎓Data Mahasiswa</a>
-            	<a class="nav-item nav-link" href="<?php echo base_url();?>dosen">🤵Data Dosen</a>
-							<a class="nav-item nav-link" href="<?php echo base_url();?>matkul">📚Data Mata-Kuliah</a>
-							<a class="nav-item nav-link" href="<?php echo base_url();?>login/logout">Logout</a>
-            </div>
+            <ul class="navbar-nav mr-auto">
+            	<li><a class="nav-item nav-link active" href="<?php echo base_url();?>absensi">⌚Absensi <span class="sr-only">(current)</span></a></li>
+            	<li><a class="nav-item nav-link" href="<?php echo base_url();?>mahasiswa">👨‍🎓Data Mahasiswa</a></li>
+            	<li><a class="nav-item nav-link" href="<?php echo base_url();?>dosen">🤵Data Dosen</a></li>
+							<li><a class="nav-item nav-link" href="<?php echo base_url();?>matkul">📚Data Mata-Kuliah</a></li>
+						</ul>
+						<ul class="navbar-nav ml-auto">
+							<li><a class="nav-item nav-link" href="<?php echo base_url();?>login/logout">Logout</a></li>
+						</ul>
         </div>	
 				</div>
 		</nav>

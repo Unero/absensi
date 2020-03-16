@@ -22,19 +22,21 @@ class Login extends CI_Controller {
 		$username = htmlspecialchars($this->input->post('username'));
 		$password = htmlspecialchars($this->input->post('password'));
 		$ceklogin = $this->login_model->login($username, $password);
-
+		
 		if ($ceklogin) {
 			foreach ($ceklogin as $row);
 			$this->session->set_userdata('user', $row->username);
 			$this->session->set_userdata('level', $row->level);
 
-			if ($this->session->userdata('level')=="1") {
+			if ($this->session->userdata('level') == "1") {
 				redirect('Absensi');
-			} elseif ($this->session->userdata('level')=="2") {
+			} elseif ($this->session->userdata('level') == "2") {
+				redirect('Absensi');
+			} elseif ($this->session->userdata('level') == "3") {
 				redirect('Admin');
 			}
 		} else {
-			$data['pesan'] = "Username dan Password anda salah";
+			$data['pesan'] = "Username dan Password anda salah / akun sedang dinonaktifkan";
 			$data['title'] = "Login";
 			$this->load->view('template/header_non_navbar', $data);
 			$this->load->view('user_activities/index', $data);
