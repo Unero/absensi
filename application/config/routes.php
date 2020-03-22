@@ -50,5 +50,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Login';
+
+// API Endpoint
+$route['Api/Absensi'] = 'Api/Absensi';
+$route['Api/Dosen'] = 'Api/Dosen';
+$route['Api/Mahasiswa'] = 'Api/Mahasiswa';
+$route['Api/Matkul'] = 'Api/Matkul';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
