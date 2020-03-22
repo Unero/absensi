@@ -9,8 +9,10 @@ class absensi_model extends CI_Model {
 		$this->db->join('dosen d', 'd.nip = a.dosen');
 		$this->db->join('mahasiswa m', 'm.nim = a.mahasiswa');
 		$this->db->join('matkul mk', 'mk.id = a.matkul');
+		$this->db->where('a.tanggal', date("Y-m-d"));
 		
 		$query = $this->db->get();
+
 		if ($query->num_rows() != 0) {
 			return $query->result_array();
 		} else {
