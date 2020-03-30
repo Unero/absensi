@@ -32,7 +32,7 @@
 				</div>
 				<div class="form-group">
 					<label for="tanggal">Tanggal</label>
-					<input type="date" name="tanggal" id="tanggal" class="form-control">
+					<input type="date" name="tanggal" id="tanggal" value="<?= $Sekarang; ?>" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-primary">Absent</button>
 			</form>

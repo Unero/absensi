@@ -27,6 +27,7 @@ class Login extends CI_Controller {
 			foreach ($ceklogin as $row);
 			$this->session->set_userdata('user', $row->username);
 			$this->session->set_userdata('level', $row->level);
+			$this->session->set_userdata('tanggal', date("Y-m-d"));
 
 			if ($this->session->userdata('level') == "1") {
 				redirect('Absensi');

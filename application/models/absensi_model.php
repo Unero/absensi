@@ -36,6 +36,17 @@ class absensi_model extends CI_Model {
 		}
 	}
 
+	public function checkTanggal($tanggal){
+		$this->db->select('mk.nama, d.nama_dosen, m.nama_mhs, m.nim, a.status, a.tanggal');
+		$this->db->from('absensi a');
+		$this->db->join('dosen d', 'd.nip = a.dosen');
+		$this->db->join('mahasiswa m', 'm.nim = a.mahasiswa');
+		$this->db->join('matkul mk', 'mk.id = a.matkul');
+		$this->db->where('a.tanggal', $tanggal);
+		
+		return $this->db->get()->num_rows();
+	}
+
 	public function add($data){
 		$this->db->insert('absensi', $data);
 	}
